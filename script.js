@@ -1,59 +1,90 @@
 // Mum verileri
-const mumlar = [
+const candles = [
     {
-        isim: "Lavanta Mum",
-        yanmaSuresi: "50 Saat",
-        malzeme: "Soja Mumu",
-        fiyat: "45₺",
-        resim: "mum1.jpg"
+        name: "Taper Candle",
+        burningTime: "8 Hours",
+        material: "Premium Soy Wax",
+        price: "7lv",
+        scent: "Sun Set - Vanilia + Sakura",
+        image: "taper.jpg"
     },
     {
-        isim: "Vadi Mum",
-        yanmaSuresi: "60 Saat",
-        malzeme: "Balmumu",
-        fiyat: "55₺",
-        resim: "mum2.jpg"
+        name: "Ribbed Candle",
+        burningTime: "6 Hours",
+        material: "Premium Soy Wax",
+        price: "5lv",
+        image: "ribbed.jpg"
     },
     {
-        isim: "Gül Mum",
-        yanmaSuresi: "40 Saat",
-        malzeme: "Soja Mumu",
-        fiyat: "50₺",
-        resim: "mum3.jpg"
+        name: "Zig Zag Candle",
+        burningTime: "15 Hours",
+        material: "Premium Soy Wax",
+        price: "12lv",
+        image: "zigzag.jpg"
     },
     {
-        isim: "Sedir Mum",
-        yanmaSuresi: "55 Saat",
-        malzeme: "Sedir Ağacı Yağı",
-        fiyat: "60₺",
-        resim: "mum4.jpg"
+        name: "Tower Candle",
+        burningTime: "4 Hours",
+        material: "Premium Soy Wax",
+        price: "4lv",
+        image: "tower.jpg"
+    },
+    {
+        name: "Spiral Candle",
+        burningTime: "4.5 Hours",
+        material: "Premium Soy Wax",
+        price: "4lv",
+        image: "spiral.jpg"
     }
 ];
 
-// Mumları ekranda gösterecek fonksiyon
-function rastgeleMumGoster() {
-    const mumContainer = document.getElementById("mum-container");
+const instagramPosts = [
+     "https://www.instagram.com/p/DH8UPQINxAZ/",
+     "https://www.instagram.com/p/DIEHfdzNkVH/",
+     "https://www.instagram.com/p/DIEG5k1Npwl/",
+     "https://www.instagram.com/p/DGc-O9tt0zU/"
+];
 
-    // Rastgele mum seçimi
-    const rastgeleIndex = Math.floor(Math.random() * mumlar.length);
-    const secilenMum = mumlar[rastgeleIndex];
+let currentContent = "candle"; // Keep track of what type of content is currently displayed
 
-    // HTML içeriğini güncelleme
-    mumContainer.innerHTML = `
-        <div class="mum-info">
-            <h3>${secilenMum.isim}</h3>
-            <p>Yanma Süresi: ${secilenMum.yanmaSuresi}</p>
-            <p>Malzeme: ${secilenMum.malzeme}</p>
-            <p>Fiyat: ${secilenMum.fiyat}</p>
-        </div>
-        <img src="${secilenMum.resim}" alt="${secilenMum.isim}" class="mum-resim">
-    `;
+function showRandomContent() {
+    const contentContainer = document.getElementById("content-container");
+
+    // Randomly decide between showing a candle or Instagram post
+    if (currentContent === "candle") {
+        // Show a random candle
+        const randomIndex = Math.floor(Math.random() * candles.length);
+        const selectedCandle = candles[randomIndex];
+
+        contentContainer.innerHTML = `
+            <div class="candle-info">
+                <h3>${selectedCandle.name}</h3>
+                <p>Burning Time: ${selectedCandle.burningTime}</p>
+                <p>Made with: ${selectedCandle.material}</p>
+                <p>Price: ${selectedCandle.price}</p>
+            </div>
+            <img src="${selectedCandle.image}" alt="${selectedCandle.name}" class="candle-image">
+        `;
+        
+        currentContent = "instagram"; // Switch to Instagram after candle
+    } else {
+        // Show a random Instagram post
+        const randomIndex = Math.floor(Math.random() * instagramPosts.length);
+        const selectedPost = instagramPosts[randomIndex];
+
+        contentContainer.innerHTML = `
+            <div class="instagram-post">
+                <iframe src="https://www.instagram.com/p/${selectedPost.split("/")[4]}/embed" width="400" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+        `;
+
+        currentContent = "candle"; // Switch to candle after Instagram post
+    }
 }
 
-// Sayfa yüklendiğinde ilk mum gösterilsin
-window.onload = function() {
-    rastgeleMumGoster();
+// Set interval to switch between Instagram post and candle
+setInterval(showRandomContent, 5000);  // Default is 5 seconds for both
 
-    // Rastgele mumları her 5 saniyede bir değiştirelim
-    setInterval(rastgeleMumGoster, 5000);  // 5000ms = 5 saniye
-};
+// Initially call showRandomContent once so that the page starts with random content
+showRandomContent();
+

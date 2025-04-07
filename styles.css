@@ -1,84 +1,65 @@
-/* Genel Stiller */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #222;
-    color: #fff;
-    overflow-x: hidden;
-    text-align: center;
-}
-
-header {
-    background-color: #333;
-    padding: 20px;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-}
-
-header nav ul {
-    list-style: none;
     display: flex;
-    justify-content: center;
-    padding: 0;
+    justify-content: center;  /* Horizontally center */
+    align-items: center;      /* Vertically center */
+    height: 100vh;            /* Full viewport height */
+    margin: 0;                /* Remove default margin */
+    background: linear-gradient(135deg, #2e3b4e, #1d2a35, #8a9ca3); /* Soğuk tonlardan şık geçiş */
+    background-size: 400% 400%; /* Background size for smooth animation */
+    animation: gradientAnimation 15s ease infinite; /* Smooth background transition */
+    font-family: 'Arial', sans-serif;
+    color: white;             /* Text color to stand out on dark background */
+    text-align: center;
 }
 
-header nav ul li {
-    margin: 0 15px;
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
+#content-container {
+    width: 80%;
+    max-width: 600px;  /* Maximum width */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);  /* Semi-transparent background for content */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Apply blur effect to background */
 }
 
-main {
-    padding-top: 80px; /* Header altındaki boşluk için */
-}
-
-.mum-info {
+.candle-info {
     margin-bottom: 20px;
 }
 
-.mum-info h3 {
-    font-size: 30px;
-    margin-bottom: 10px;
-    color: #fff;
+.candle-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
 }
 
-.mum-info p {
-    font-size: 18px;
-    margin: 5px 0;
-    color: #bbb;
+.instagram-post {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;  /* Instagram postlarının max genişliğini sınırla */
+    margin: 0 auto;
 }
 
-.mum-resim {
-    width: 70%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+.instagram-media {
+    width: 100%;
+    max-width: 600px; /* Instagram postlarının genişliğini daha da küçült */
+    margin: 0 auto;
 }
 
-.mum-resim:hover {
-    transform: scale(1.1);
-}
-
-/* Mobil Uyumluluk */
-@media (max-width: 768px) {
-    .mum-resim {
-        width: 90%;
-    }
-
-    .mum-info h3 {
-        font-size: 24px;
-    }
-
-    .mum-info p {
-        font-size: 16px;
-    }
+p {
+    font-size: 16px;
+    line-height: 1.5;
 }
