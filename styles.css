@@ -1,0 +1,84 @@
+/* Genel Stiller */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    color: #fff;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    padding-top: 80px; /* Header altındaki boşluk için */
+}
+
+.mum-info {
+    margin-bottom: 20px;
+}
+
+.mum-info h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.mum-info p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #bbb;
+}
+
+.mum-resim {
+    width: 70%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.mum-resim:hover {
+    transform: scale(1.1);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .mum-resim {
+        width: 90%;
+    }
+
+    .mum-info h3 {
+        font-size: 24px;
+    }
+
+    .mum-info p {
+        font-size: 16px;
+    }
+}
