@@ -49,17 +49,69 @@ body {
 .instagram-post {
     margin-top: 20px;
     width: 100%;
-    max-width: 600px;  /* Instagram postlarının max genişliğini sınırla */
+    max-width: 700px;  /* Instagram postlarının max genişliğini sınırla */
     margin: 0 auto;
 }
 
 .instagram-media {
     width: 100%;
-    max-width: 600px; /* Instagram postlarının genişliğini daha da küçült */
+    max-width: 700px; /* Instagram postlarının genişliğini daha da küçült */
     margin: 0 auto;
 }
 
 p {
     font-size: 16px;
     line-height: 1.5;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px; /* Küçük ekranlarda font boyutunu küçült */
+    }
+
+    #content-container {
+        width: 90%;  /* Daha geniş içerik alanı */
+        max-width: 100%; /* Daha fazla esneklik */
+        padding: 15px;  /* Paddingi azalt */
+    }
+
+    .candle-info {
+        font-size: 14px; /* Mum bilgilerinin yazı boyutunu küçült */
+    }
+
+    .candle-image {
+        max-width: 250px;  /* Mum resmini küçült */
+        margin: 10px auto; /* Resmin çevresindeki boşluğu azalt */
+    }
+
+    .instagram-media {
+        max-width: 320px;  /* Instagram postlarının genişliğini artır */
+    }
+
+    p {
+        font-size: 14px;  /* Paragraf yazı boyutunu küçült */
+    }
+}
+
+/* Daha küçük ekranlar (telefonlar gibi) için ek responsive düzenlemeleri */
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 12px; /* Çok küçük ekranlarda font boyutunu daha da küçült */
+    }
+
+    .candle-info {
+        font-size: 12px; /* Mum bilgilerinin yazı boyutunu küçült */
+    }
+
+    .candle-image {
+        max-width: 200px;  /* Mum resmini daha da küçült */
+    }
+
+    .instagram-media {
+        max-width: 280px;  /* Instagram postlarını daha da küçült */
+    }
+
+    p {
+        font-size: 12px;  /* Paragraf yazı boyutunu küçült */
+    }
 }

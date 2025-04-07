@@ -39,10 +39,10 @@ const candles = [
 ];
 
 const instagramPosts = [
-     "https://www.instagram.com/p/DH8UPQINxAZ/",
      "https://www.instagram.com/p/DIEHfdzNkVH/",
      "https://www.instagram.com/p/DIEG5k1Npwl/",
-     "https://www.instagram.com/p/DGc-O9tt0zU/"
+     "https://www.instagram.com/p/DIEGWUot4NR/",
+     "https://www.instagram.com/p/DIBxPGpNL-h/"
 ];
 
 let currentContent = "candle"; // Keep track of what type of content is currently displayed
