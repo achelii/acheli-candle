@@ -45,14 +45,12 @@ const instagramPosts = [
      "https://www.instagram.com/p/DIBxPGpNL-h/"
 ];
 
-let currentContent = "candle"; // Keep track of what type of content is currently displayed
+let currentContent = "candle";
 
 function showRandomContent() {
     const contentContainer = document.getElementById("content-container");
 
-    // Randomly decide between showing a candle or Instagram post
     if (currentContent === "candle") {
-        // Show a random candle
         const randomIndex = Math.floor(Math.random() * candles.length);
         const selectedCandle = candles[randomIndex];
 
@@ -66,25 +64,30 @@ function showRandomContent() {
             <img src="${selectedCandle.image}" alt="${selectedCandle.name}" class="candle-image">
         `;
         
-        currentContent = "instagram"; // Switch to Instagram after candle
+        currentContent = "instagram";
+        contentInterval = setTimeout(showRandomContent, 5000);
     } else {
-        // Show a random Instagram post
         const randomIndex = Math.floor(Math.random() * instagramPosts.length);
         const selectedPost = instagramPosts[randomIndex];
 
         contentContainer.innerHTML = `
-            <div class="instagram-post">
-                <iframe src="https://www.instagram.com/p/${selectedPost.split("/")[4]}/embed" width="400" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            </div>
-        `;
-
-        currentContent = "candle"; // Switch to candle after Instagram post
+    <div class="instagram-wrapper">
+        <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="${selectedPost}" 
+            data-instgrm-version="14"
+            style="margin: 0 auto; width:100%; max-width: 320px;">
+        </blockquote>
+    </div>
+`;
+        if (window.instgrm) {
+            window.instgrm.Embeds.process();
+        }
+        currentContent = "candle";
+        contentInterval = setTimeout(showRandomContent, 15000);
     }
 }
 
-// Set interval to switch between Instagram post and candle
-setInterval(showRandomContent, 5000);  // Default is 5 seconds for both
 
-// Initially call showRandomContent once so that the page starts with random content
 showRandomContent();
 
