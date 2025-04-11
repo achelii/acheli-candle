@@ -1,48 +1,119 @@
 // Mum verileri
 const candles = [
     {
-        name: "Taper Candle",
-        burningTime: "8 Hours",
+        name: "Taper",
         material: "Premium Soy Wax",
         price: "7lv",
-        scent: "Sun Set - Vanilia + Sakura",
         image: "taper.jpg"
     },
     {
-        name: "Ribbed Candle",
-        burningTime: "6 Hours",
+        name: "Taper - Two Color",
         material: "Premium Soy Wax",
-        price: "5lv",
+        price: "9lv",
+        image: "taper_colored.jpg"
+    },
+    {
+        name: "Ribbed",
+        material: "Premium Soy Wax",
+        price: "6lv",
         image: "ribbed.jpg"
     },
     {
-        name: "Zig Zag Candle",
-        burningTime: "15 Hours",
+        name: "Ribbed - Two Color",
         material: "Premium Soy Wax",
-        price: "12lv",
+        price: "8lv",
+        image: "ribbed_two_color.jpg"
+    },
+    {
+        name: "Zig Zag",
+        material: "Premium Soy Wax",
+        price: "11lv",
         image: "zigzag.jpg"
     },
     {
-        name: "Tower Candle",
-        burningTime: "4 Hours",
+        name: "Zig Zag - Two Color",
         material: "Premium Soy Wax",
-        price: "4lv",
+        price: "13lv",
+        image: "zigzag_two_color.jpg"
+    },
+    {
+        name: "Tower",
+        material: "Premium Soy Wax",
+        price: "5lv",
         image: "tower.jpg"
     },
     {
-        name: "Spiral Candle",
-        burningTime: "4.5 Hours",
+        name: "Spiral",
         material: "Premium Soy Wax",
-        price: "4lv",
+        price: "5lv",
         image: "spiral.jpg"
+    },
+    {
+        name: "Closet",
+        material: "Premium Soy Wax",
+        price: "5lv",
+        image: "closet.jpg"
+    },
+    {
+        name: "Tree",
+        material: "Premium Soy Wax",
+        price: "11lv",
+        image: "tree.jpg"
+    },
+    {
+        name: "Hourglass - Big - Two Color",
+        material: "Premium Soy Wax",
+        price: "17lv",
+        image: "hour_glass_big.jpg"
+    },
+    {
+        name: "Hourglass - Big",
+        material: "Premium Soy Wax",
+        price: "15lv",
+        image: "hour_glass_single.jpg"
+    },
+    {
+        name: "Hourglass - Two Color",
+        material: "Premium Soy Wax",
+        price: "13lv",
+        image: "hour_glass_single.jpg"
+    },
+    {
+        name: "Pencil - Small",
+        material: "Premium Soy Wax",
+        price: "10lv",
+        image: "pencil_small.jpg"
+    },
+    {
+        name: "Pencil - Two Color",
+        material: "Premium Soy Wax",
+        price: "12lv",
+        image: "pencil_two_color.jpg"
+    },
+    {
+        name: "Pencil",
+        material: "Premium Soy Wax",
+        price: "10lv",
+        image: "pencil.jpg"
+    },
+    {
+        name: "Ying-Yang",
+        material: "Premium Soy Wax",
+        price: "11lv",
+        image: "yingyang.jpg"
     }
 ];
 
-const instagramPosts = [
-     "https://www.instagram.com/p/DIEHfdzNkVH/",
-     "https://www.instagram.com/p/DIEG5k1Npwl/",
-     "https://www.instagram.com/p/DIEGWUot4NR/",
-     "https://www.instagram.com/p/DIBxPGpNL-h/"
+const candlesWithoutDesc = [
+     "post1.jpg",
+     "post2.jpg",
+     "post3.jpg",
+     "post4.jpg",
+     "post5.jpg",
+     "post6.jpg",
+     "post7.jpg",
+     "post8.jpg",
+     "post9.jpg"
 ];
 
 let currentContent = "candle";
@@ -57,34 +128,24 @@ function showRandomContent() {
         contentContainer.innerHTML = `
             <div class="candle-info">
                 <h3>${selectedCandle.name}</h3>
-                <p>Burning Time: ${selectedCandle.burningTime}</p>
                 <p>Made with: ${selectedCandle.material}</p>
                 <p>Price: ${selectedCandle.price}</p>
             </div>
-            <img src="${selectedCandle.image}" alt="${selectedCandle.name}" class="candle-image">
+            <img src="images/${selectedCandle.image}" alt="${selectedCandle.name}" class="candle-image">
         `;
         
-        currentContent = "instagram";
-        contentInterval = setTimeout(showRandomContent, 5000);
+        currentContent = "candlesWithoutDesc";
+        contentInterval = setTimeout(showRandomContent, 15000);
     } else {
-        const randomIndex = Math.floor(Math.random() * instagramPosts.length);
-        const selectedPost = instagramPosts[randomIndex];
+        const randomIndex = Math.floor(Math.random() * candlesWithoutDesc.length);
+        const selectedPost = candlesWithoutDesc[randomIndex];
 
         contentContainer.innerHTML = `
-    <div class="instagram-wrapper">
-        <blockquote 
-            class="instagram-media" 
-            data-instgrm-permalink="${selectedPost}" 
-            data-instgrm-version="14"
-            style="margin: 0 auto; width:100%; max-width: 320px;">
-        </blockquote>
-    </div>
+            <img src="images/${selectedPost}" class="posts">
 `;
-        if (window.instgrm) {
-            window.instgrm.Embeds.process();
-        }
+ 
         currentContent = "candle";
-        contentInterval = setTimeout(showRandomContent, 15000);
+        contentInterval = setTimeout(showRandomContent, 10000);
     }
 }
 

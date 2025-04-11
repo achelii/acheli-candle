@@ -1,14 +1,14 @@
 body {
     display: flex;
-    justify-content: center;  /* Horizontally center */
-    align-items: center;      /* Vertically center */
-    height: 100vh;            /* Full viewport height */
-    margin: 0;                /* Remove default margin */
-    background: linear-gradient(135deg, #2e3b4e, #1d2a35, #8a9ca3); /* Soğuk tonlardan şık geçiş */
-    background-size: 400% 400%; /* Background size for smooth animation */
-    animation: gradientAnimation 15s ease infinite; /* Smooth background transition */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #2e3b4e, #1d2a35, #8a9ca3);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
     font-family: 'Arial', sans-serif;
-    color: white;             /* Text color to stand out on dark background */
+    color: white;
     text-align: center;
 }
 
@@ -26,12 +26,12 @@ body {
 
 #content-container {
     width: 80%;
-    max-width: 600px;  /* Maximum width */
+    max-width: 600px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);  /* Semi-transparent background for content */
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px); /* Apply blur effect to background */
+    backdrop-filter: blur(10px);
 }
 
 .candle-info {
@@ -40,47 +40,20 @@ body {
 
 .candle-image {
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     height: auto;
     display: block;
     margin: 20px auto;
 }
 
-.instagram-post {
-    margin-top: 20px;
+.posts {
     width: 100%;
-    max-width: 700px;  /* Instagram postlarının max genişliğini sınırla */
-    margin: 0 auto;
-}
-
-.instagram-media {
-    width: 100%;
-    max-width: 700px; /* Instagram postlarının genişliğini daha da küçült */
-    margin: 0 auto;
-}
-
-.instagram-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: border-box;
-    max-width: 100%;
-}
-
-#logo-top {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-}
-
-#brand-logo {
-    width: 120px;
+    max-width: 500px;
     height: auto;
+    display: block;
+    margin: 20px auto;
 }
 
-/* QR code in top-right */
 #qr-top-right {
     position: fixed;
     top: 20px;
@@ -105,52 +78,45 @@ p {
 
 @media only screen and (max-width: 768px) {
     body {
-        font-size: 14px; /* Küçük ekranlarda font boyutunu küçült */
+        font-size: 14px;
     }
 
     #content-container {
-        width: 90%;  /* Daha geniş içerik alanı */
-        max-width: 100%; /* Daha fazla esneklik */
-        padding: 15px;  /* Paddingi azalt */
+        width: 90%;
+        max-width: 100%;
+        padding: 15px;
     }
 
     .candle-info {
-        font-size: 14px; /* Mum bilgilerinin yazı boyutunu küçült */
+        font-size: 14px;
     }
 
     .candle-image {
-        max-width: 250px;  /* Mum resmini küçült */
-        margin: 10px auto; /* Resmin çevresindeki boşluğu azalt */
+        max-width: 250px;
+        margin: 10px auto;
     }
 
-    .instagram-media {
-        max-width: 320px;  /* Instagram postlarının genişliğini artır */
-    }
 
     p {
-        font-size: 14px;  /* Paragraf yazı boyutunu küçült */
+        font-size: 14px;
     }
 }
 
-/* Daha küçük ekranlar (telefonlar gibi) için ek responsive düzenlemeleri */
 @media only screen and (max-width: 480px) {
     body {
-        font-size: 12px; /* Çok küçük ekranlarda font boyutunu daha da küçült */
+        font-size: 12px;
     }
 
     .candle-info {
-        font-size: 12px; /* Mum bilgilerinin yazı boyutunu küçült */
+        font-size: 12px;
     }
 
     .candle-image {
-        max-width: 200px;  /* Mum resmini daha da küçült */
+        max-width: 200px;
     }
 
-    .instagram-media {
-        max-width: 280px;  /* Instagram postlarını daha da küçült */
-    }
 
     p {
-        font-size: 12px;  /* Paragraf yazı boyutunu küçült */
+        font-size: 12px;
     }
 }
