@@ -67,7 +67,7 @@ const candles = [
         image: "hour_glass_big.jpg"
     },
     {
-        name: "Hourglass - Big",
+        name: "Hourglass",
         material: "Premium Soy Wax",
         price: "15lv",
         image: "hour_glass_single.jpg"
@@ -76,7 +76,7 @@ const candles = [
         name: "Hourglass - Two Color",
         material: "Premium Soy Wax",
         price: "13lv",
-        image: "hour_glass_single.jpg"
+        image: "hour_glass_small_two_color.jpg"
     },
     {
         name: "Pencil - Small",
