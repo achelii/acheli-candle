@@ -1,0 +1,104 @@
+[
+    {
+        "name": "Taper",
+        "material": "Premium Soy Wax",
+        "price": "7lv",
+        "image": "taper.jpg"
+    },
+    {
+        "name": "Taper - Two Color",
+        "material": "Premium Soy Wax",
+        "price": "9lv",
+        "image": "taper_colored.jpg"
+    },
+    {
+        "name": "Ribbed",
+        "material": "Premium Soy Wax",
+        "price": "6lv",
+        "image": "ribbed.jpg"
+    },
+    {
+        "name": "Ribbed - Two Color",
+        "material": "Premium Soy Wax",
+        "price": "8lv",
+        "image": "ribbed_two_color.jpg"
+    },
+    {
+        "name": "Zig Zag",
+        "material": "Premium Soy Wax",
+        "price": "11lv",
+        "image": "zigzag.jpg"
+    },
+    {
+        "name": "Zig Zag - Two Color",
+        "material": "Premium Soy Wax",
+        "price": "13lv",
+        "image": "zigzag_two_color.jpg"
+    },
+    {
+        "name": "Tower",
+        "material": "Premium Soy Wax",
+        "price": "5lv",
+        "image": "tower.jpg"
+    },
+    {
+        "name": "Spiral",
+        "material": "Premium Soy Wax",
+        "price": "5lv",
+        "image": "spiral.jpg"
+    },
+    {
+        "name": "Closet",
+        "material": "Premium Soy Wax",
+        "price": "5lv",
+        "image": "closet.jpg"
+    },
+    {
+        "name": "Tree",
+        "material": "Premium Soy Wax",
+        "price": "11lv",
+        "image": "tree.jpg"
+    },
+    {
+        "name": "Hourglass - Big - Two Color",
+        "material": "Premium Soy Wax",
+        "price": "17lv",
+        "image": "hour_glass_big.jpg"
+    },
+    {
+        "name": "Hourglass",
+        "material": "Premium Soy Wax",
+        "price": "15lv",
+        "image": "hour_glass_single.jpg"
+    },
+    {
+        "name": "Hourglass - Two Color",
+        "material": "Premium Soy Wax",
+        "price": "13lv",
+        "image": "hour_glass_small_two_color.jpg"
+    },
+    {
+        "name": "Pencil - Small",
+        "material": "Premium Soy Wax",
+        "price": "10lv",
+        "image": "pencil_small.jpg"
+    },
+    {
+        "name": "Pencil - Two Color",
+        "material": "Premium Soy Wax",
+        "price": "12lv",
+        "image": "pencil_two_color.jpg"
+    },
+    {
+        "name": "Pencil",
+        "material": "Premium Soy Wax",
+        "price": "10lv",
+        "image": "pencil.jpg"
+    },
+    {
+        "name": "Ying-Yang",
+        "material": "Premium Soy Wax",
+        "price": "11lv",
+        "image": "yingyang.jpg"
+    }
+]
