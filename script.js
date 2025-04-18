@@ -12,100 +12,100 @@ const candlesWithoutDesc = [
 
 let candles = [];
 let currentContent = "candle";
-let currentImageIndex = 0;
-let currentCandleIndex = 0;
-
-function showRandomContent() {
-  const contentContainer = document.getElementById("content-container");
-
-  if (currentContent === "candle" && candles.length > 0) {
-    currentCandleIndex = Math.floor(Math.random() * candles.length);
-    currentImageIndex = 0;
-    const selectedCandle = candles[currentCandleIndex];
-    renderCandleCarousel(selectedCandle);
-
-    currentContent = "candlesWithoutDesc";
-    setTimeout(showRandomContent, 15000);
-  } else {
-    const randomIndex = Math.floor(Math.random() * candlesWithoutDesc.length);
-    const selectedPost = candlesWithoutDesc[randomIndex];
-
-    contentContainer.innerHTML = `
-      <img src="images/${selectedPost}" class="posts">
-    `;
-
-    currentContent = "candle";
-    setTimeout(showRandomContent, 10000);
-  }
-}
 
 function renderCandleCarousel(candle) {
-  const contentContainer = document.getElementById("content-container");
-
-  const slidesHTML = candle.images.map((img, index) => `
-    <div class="fade-slide ${index === currentImageIndex ? 'active' : ''}">
-      <img src="images/${img}" alt="${candle.name}" class="candle-image">
-    </div>
-  `).join("");
-
-  contentContainer.innerHTML = `
+  const images = candle.images;
+  let carouselHTML = `
     <div class="candle-info">
       <h3>${candle.name}</h3>
       <p>Made with: ${candle.material}</p>
       <p>Price: ${candle.price}</p>
     </div>
-    <div class="carousel-wrapper" id="carousel-wrapper">
-      ${slidesHTML}
-      <button class="nav prev" onclick="prevSlide()">‹</button>
-      <button class="nav next" onclick="nextSlide()">›</button>
+    <div class="carousel-container">
+  `;
+
+  images.forEach((img, index) => {
+    carouselHTML += `
+      <img src="images/${img}" class="carousel-image${index === 0 ? ' active' : ''}" alt="${candle.name} image ${index + 1}">
+    `;
+  });
+
+  carouselHTML += `
+      <button class="carousel-nav prev">&#10094;</button>
+      <button class="carousel-nav next">&#10095;</button>
     </div>
   `;
 
-  setupSwipe();
+  return carouselHTML;
 }
 
-function prevSlide() {
-  const candle = candles[currentCandleIndex];
-  currentImageIndex = (currentImageIndex - 1 + candle.images.length) % candle.images.length;
-  renderCandleCarousel(candle);
-}
+function addCarouselControls(container) {
+  let current = 0;
+  const images = container.querySelectorAll(".carousel-image");
 
-function nextSlide() {
-  const candle = candles[currentCandleIndex];
-  currentImageIndex = (currentImageIndex + 1) % candle.images.length;
-  renderCandleCarousel(candle);
-}
-
-function setupSwipe() {
-  const wrapper = document.getElementById("carousel-wrapper");
-  let startX = 0;
-
-  wrapper.ontouchstart = (e) => {
-    startX = e.touches[0].clientX;
-  };
-
-  wrapper.ontouchend = (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
-
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-        nextSlide();
-      } else {
-        prevSlide();
+  function show(index) {
+    images.forEach((img, i) => {
+      img.classList.remove("active");
+      if (i === index) {
+        img.classList.add("active");
       }
+    });
+  }
+
+  container.querySelector(".prev").addEventListener("click", () => {
+    current = (current - 1 + images.length) % images.length;
+    show(current);
+  });
+
+  container.querySelector(".next").addEventListener("click", () => {
+    current = (current + 1) % images.length;
+    show(current);
+  });
+
+  // Swipe support
+  let startX = 0;
+  container.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  container.addEventListener("touchend", (e) => {
+    const diff = e.changedTouches[0].clientX - startX;
+    if (diff > 50) {
+      current = (current - 1 + images.length) % images.length;
+      show(current);
+    } else if (diff < -50) {
+      current = (current + 1) % images.length;
+      show(current);
     }
-  };
+  });
+}
+
+function showRandomContent() {
+  const container = document.getElementById("content-container");
+
+  if (currentContent === "candle" && candles.length > 0) {
+    const candle = candles[Math.floor(Math.random() * candles.length)];
+    container.innerHTML = renderCandleCarousel(candle);
+    addCarouselControls(container.querySelector(".carousel-container"));
+    currentContent = "candlesWithoutDesc";
+    setTimeout(showRandomContent, 15000);
+  } else {
+    const post = candlesWithoutDesc[Math.floor(Math.random() * candlesWithoutDesc.length)];
+    container.innerHTML = `<img src="images/${post}" class="posts">`;
+    currentContent = "candle";
+    setTimeout(showRandomContent, 10000);
+  }
 }
 
 function loadCandlesAndStart() {
   fetch("candles.json")
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
       candles = data;
       showRandomContent();
     })
-    .catch(error => console.error("Failed to load candles.json:", error));
+    .catch(err => console.error("Error loading candles.json:", err));
 }
 
 document.addEventListener("DOMContentLoaded", loadCandlesAndStart);
+

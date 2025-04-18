@@ -44,7 +44,7 @@
         "material": "Premium Soy Wax",
         "price": "13lv",
         "image": "zigzag_two_color.jpg",
-        "images": "zigzag_two_color.jpg",
+        "images": ["zigzag_two_color.jpg", "zigzag.jpg"],
         "lenght": "24"
     },
     {
@@ -52,7 +52,7 @@
         "material": "Premium Soy Wax",
         "price": "5lv",
         "image": "tower.jpg",
-        "images": "tower.jpg",
+        "images": ["tower.jpg", "tower.jpg"],
         "lenght": "20"
     },
     {
@@ -60,7 +60,7 @@
         "material": "Premium Soy Wax",
         "price": "5lv",
         "image": "spiral.jpg",
-        "images": "spiral.jpg",
+        "images": ["spiral.jpg", "spiral.jpg"],
         "lenght": "20"
     },
     {
@@ -68,7 +68,7 @@
         "material": "Premium Soy Wax",
         "price": "5lv",
         "image": "closet.jpg",
-        "images": "closet.jpg",
+        "images": ["closet.jpg", "closet.jpg"],
         "lenght": "9"
     },
     {
@@ -76,7 +76,7 @@
         "material": "Premium Soy Wax",
         "price": "6lv",
         "image": "closet.jpg",
-        "images": "closet.jpg",
+        "images": ["closet.jpg", "closet.jpg"],
         "lenght": "8"
     },
     {
@@ -84,7 +84,7 @@
         "material": "Premium Soy Wax",
         "price": "13lv",
         "image": "tree.jpg",
-        "images": "tree.jpg",
+        "images": ["tree.jpg", "tree.jpg"],
         "lenght": "11"
     },
     {
@@ -92,7 +92,7 @@
         "material": "Premium Soy Wax",
         "price": "17lv",
         "image": "hour_glass_big.jpg",
-        "images": "hour_glass_big.jpg",
+        "images": ["hour_glass_big.jpg", "hour_glass_single.jpg"],
         "lenght": "15"
     },
     {
@@ -100,7 +100,7 @@
         "material": "Premium Soy Wax",
         "price": "15lv",
         "image": "hour_glass_single.jpg",
-        "images": "hour_glass_single.jpg",
+        "images": ["hour_glass_single.jpg", "hour_glass_big.jpg"],
         "lenght": "12"
     },
     {
@@ -108,7 +108,7 @@
         "material": "Premium Soy Wax",
         "price": "13lv",
         "image": "hour_glass_small_two_color.jpg",
-        "images": "hour_glass_small_two_color.jpg",
+        "images": ["hour_glass_small_two_color.jpg"],
         "lenght": "12"
     },
     {
@@ -116,7 +116,7 @@
         "material": "Premium Soy Wax",
         "price": "10lv",
         "image": "pencil_small.jpg",
-        "images": "pencil_small.jpg",
+        "images": ["pencil_small.jpg"],
         "lenght": "9"
     },
     {
@@ -124,7 +124,7 @@
         "material": "Premium Soy Wax",
         "price": "12lv",
         "image": "pencil_two_color.jpg",
-        "images": "pencil_two_color.jpg",
+        "images": ["pencil_two_color.jpg"],
         "lenght": "12"
     },
     {
@@ -132,7 +132,7 @@
         "material": "Premium Soy Wax",
         "price": "10lv",
         "image": "pencil.jpg",
-        "images": "pencil.jpg",
+        "images": ["pencil.jpg"],
         "lenght": "12"
     },
     {
@@ -140,7 +140,7 @@
         "material": "Premium Soy Wax",
         "price": "11lv",
         "image": "yingyang.jpg",
-        "images": "yingyang.jpg",
+        "images": ["yingyang.jpg"],
         "lenght": "8"
     }
 ]
