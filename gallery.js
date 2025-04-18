@@ -5,6 +5,7 @@ function createCandleItem(candle) {
     <img src="images/${candle.image}" alt="${candle.name}">
     <h3>${candle.name}</h3>
     <p>Price: ${candle.price}</p>
+    <p>Lenght: ${candle.lenght}</p>
   `;
   return item;
 }

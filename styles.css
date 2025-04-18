@@ -120,6 +120,59 @@ body {
   border-radius: 6px;
 }
 
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 30px auto 0;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.fade-slide {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.fade-slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
+}
+
+.nav:hover {
+  background: rgba(255,255,255,0.4);
+  color: #000;
+}
+
+
 p {
     font-size: 16px;
     line-height: 1.5;
@@ -149,6 +202,19 @@ p {
     p {
         font-size: 14px;
     }
+
+    .carousel-wrapper {
+    padding: 10px;
+    }
+
+    .slide img.candle-image {
+        max-width: 90%;
+    }
+
+    .nav {
+        font-size: 2rem;
+        padding: 4px 10px;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -167,5 +233,18 @@ p {
 
     p {
         font-size: 12px;
+    }
+
+    .carousel-wrapper {
+    padding: 10px;
+    }
+
+    .slide img.candle-image {
+        max-width: 90%;
+    }
+
+    .nav {
+        font-size: 2rem;
+        padding: 4px 10px;
     }
 }
