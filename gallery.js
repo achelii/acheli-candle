@@ -1,27 +1,74 @@
-function createCandleItem(candle) {
-  const item = document.createElement("div");
-  item.className = "gallery-item";
-  item.innerHTML = `
-    <img src="images/${candle.image}" alt="${candle.name}">
-    <h3>${candle.name}</h3>
-    <p>Price: ${candle.price}</p>
-    <p>Lenght: ${candle.lenght}</p>
-  `;
-  return item;
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.getElementById('gallery-container');
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const closeBtn = document.querySelector('.close-btn');
 
-function loadCandles() {
-  fetch("candles.json")
-    .then(response => response.json())
-    .then(candles => {
-      const container = document.getElementById("gallery-container");
-      candles.forEach(candle => {
-        const candleElement = createCandleItem(candle);
-        container.appendChild(candleElement);
+  let slides = [];
+  let currentIndex = 0;
+
+  function showModal() {
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hideModal() {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  function updateModalImage() {
+    modalImg.src = `images/${slides[currentIndex]}`;
+  }
+
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateModalImage();
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateModalImage();
+  });
+
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    hideModal();
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      hideModal();
+    }
+  });
+
+  fetch('candles.json')
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((candle) => {
+        const images = Array.isArray(candle.images) ? candle.images : [candle.images];
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        item.innerHTML = `
+          <img src="images/${images[0]}" alt="${candle.name}">
+          <h3>${candle.name}</h3>
+          <p>Price: ${candle.price}</p>
+          <p>Length: ${candle.length || candle.lenght}</p>
+        `;
+        item.addEventListener('click', () => {
+          slides = images;
+          currentIndex = 0;
+          updateModalImage();
+          showModal();
+        });
+        gallery.appendChild(item);
       });
     })
-    .catch(err => console.error("Error loading candles:", err));
-}
-
-// Load when page is ready
-document.addEventListener("DOMContentLoaded", loadCandles);
+    .catch((error) => {
+      console.error('Error loading candles:', error);
+    });
+});

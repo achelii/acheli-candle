@@ -31,7 +31,6 @@ function renderCandleCarousel(candle) {
   });
 
   carouselHTML += `
-      <button class="carousel-nav prev">&#10094;</button>
       <button class="carousel-nav next">&#10095;</button>
     </div>
   `;
@@ -51,11 +50,6 @@ function addCarouselControls(container) {
       }
     });
   }
-
-  container.querySelector(".prev").addEventListener("click", () => {
-    current = (current - 1 + images.length) % images.length;
-    show(current);
-  });
 
   container.querySelector(".next").addEventListener("click", () => {
     current = (current + 1) % images.length;

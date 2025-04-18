@@ -3,7 +3,6 @@
         "name": "Taper",
         "material": "Premium Soy Wax",
         "price": "7lv",
-        "image": ["taper.jpg", "taper_colored.jpg"],
         "images": ["taper.jpg", "taper_colored.jpg"],
         "lenght": "25"
     },
@@ -11,7 +10,6 @@
         "name": "Taper - Two Color",
         "material": "Premium Soy Wax",
         "price": "9lv",
-        "image": ["taper.jpg", "taper_colored.jpg"],
         "images": ["taper.jpg", "taper_colored.jpg"],
         "lenght": "25"
     },
@@ -19,7 +17,6 @@
         "name": "Ribbed",
         "material": "Premium Soy Wax",
         "price": "6lv",
-        "image": ["ribbed.jpg", "ribbed_two_color.jpg"],
         "images": ["ribbed.jpg", "ribbed_two_color.jpg"],
         "lenght": "19"
     },
@@ -27,7 +24,6 @@
         "name": "Ribbed - Two Color",
         "material": "Premium Soy Wax",
         "price": "8lv",
-        "image": ["ribbed.jpg", "ribbed_two_color.jpg"],
         "images": ["ribbed.jpg", "ribbed_two_color.jpg"],
         "lenght": "19"
     },
@@ -35,7 +31,6 @@
         "name": "Zig Zag",
         "material": "Premium Soy Wax",
         "price": "11lv",
-        "image": ["zigzag.jpg", "zigzag_two_color.jpg"],
         "images": ["zigzag.jpg", "zigzag_two_color.jpg"],
         "lenght": "24"
     },
@@ -43,7 +38,6 @@
         "name": "Zig Zag - Two Color",
         "material": "Premium Soy Wax",
         "price": "13lv",
-        "image": "zigzag_two_color.jpg",
         "images": ["zigzag_two_color.jpg", "zigzag.jpg"],
         "lenght": "24"
     },
@@ -51,7 +45,6 @@
         "name": "Tower",
         "material": "Premium Soy Wax",
         "price": "5lv",
-        "image": "tower.jpg",
         "images": ["tower.jpg", "tower.jpg"],
         "lenght": "20"
     },
@@ -59,7 +52,6 @@
         "name": "Spiral",
         "material": "Premium Soy Wax",
         "price": "5lv",
-        "image": "spiral.jpg",
         "images": ["spiral.jpg", "spiral.jpg"],
         "lenght": "20"
     },
@@ -67,7 +59,6 @@
         "name": "Sachet",
         "material": "Premium Soy Wax",
         "price": "5lv",
-        "image": "closet.jpg",
         "images": ["closet.jpg", "closet.jpg"],
         "lenght": "9"
     },
@@ -75,7 +66,6 @@
         "name": "Flower Sachet",
         "material": "Premium Soy Wax",
         "price": "6lv",
-        "image": "closet.jpg",
         "images": ["closet.jpg", "closet.jpg"],
         "lenght": "8"
     },
@@ -83,7 +73,6 @@
         "name": "Tree",
         "material": "Premium Soy Wax",
         "price": "13lv",
-        "image": "tree.jpg",
         "images": ["tree.jpg", "tree.jpg"],
         "lenght": "11"
     },
@@ -91,7 +80,6 @@
         "name": "Hourglass - Big - Two Color",
         "material": "Premium Soy Wax",
         "price": "17lv",
-        "image": "hour_glass_big.jpg",
         "images": ["hour_glass_big.jpg", "hour_glass_single.jpg"],
         "lenght": "15"
     },
@@ -99,7 +87,6 @@
         "name": "Hourglass",
         "material": "Premium Soy Wax",
         "price": "15lv",
-        "image": "hour_glass_single.jpg",
         "images": ["hour_glass_single.jpg", "hour_glass_big.jpg"],
         "lenght": "12"
     },
@@ -107,7 +94,6 @@
         "name": "Hourglass - Two Color",
         "material": "Premium Soy Wax",
         "price": "13lv",
-        "image": "hour_glass_small_two_color.jpg",
         "images": ["hour_glass_small_two_color.jpg"],
         "lenght": "12"
     },
@@ -115,7 +101,6 @@
         "name": "Pencil",
         "material": "Premium Soy Wax",
         "price": "10lv",
-        "image": "pencil_small.jpg",
         "images": ["pencil_small.jpg"],
         "lenght": "9"
     },
@@ -123,7 +108,6 @@
         "name": "Pencil - Two Color",
         "material": "Premium Soy Wax",
         "price": "12lv",
-        "image": "pencil_two_color.jpg",
         "images": ["pencil_two_color.jpg"],
         "lenght": "12"
     },
@@ -131,7 +115,6 @@
         "name": "Pencil",
         "material": "Premium Soy Wax",
         "price": "10lv",
-        "image": "pencil.jpg",
         "images": ["pencil.jpg"],
         "lenght": "12"
     },
@@ -139,7 +122,6 @@
         "name": "Ying-Yang",
         "material": "Premium Soy Wax",
         "price": "11lv",
-        "image": "yingyang.jpg",
         "images": ["yingyang.jpg"],
         "lenght": "8"
     }

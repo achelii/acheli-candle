@@ -1,9 +1,11 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   background: #1e1e1e;
-  color: white;
+  color: #fff;
   font-family: sans-serif;
-  margin: 0;
   padding: 40px;
+  overflow-x: hidden;
+  height: -webkit-fill-available;
 }
 
 .gallery-container {
@@ -12,18 +14,80 @@ body {
   gap: 20px;
   justify-content: center;
 }
-
 .gallery-item {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.08);
   padding: 20px;
   border-radius: 12px;
   width: 220px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform .2s;
 }
-
+.gallery-item:hover { transform: translateY(-5px); }
 .gallery-item img {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; 
+  height: 100vh;
+  height: -webkit-fill-available;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.nav-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.nav-buttons button {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
 }
