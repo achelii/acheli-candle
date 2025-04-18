@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.querySelector('.close-btn');
 
   let slides = [];
+  let currentFolder = '';
   let currentIndex = 0;
 
   function showModal() {
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateModalImage() {
-    modalImg.src = `images/${slides[currentIndex]}`;
+    modalImg.src = `images/${currentFolder}/${slides[currentIndex]}`;
   }
 
   prevBtn.addEventListener('click', (e) => {
@@ -51,24 +52,29 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((data) => {
       data.forEach((candle) => {
         const images = Array.isArray(candle.images) ? candle.images : [candle.images];
+        const folder = candle.folder || '';
         const item = document.createElement('div');
         item.className = 'gallery-item';
+
         item.innerHTML = `
-          <img src="images/${images[0]}" alt="${candle.name}">
+          <img src="images/${folder}/${images[0]}" alt="${candle.name}">
           <h3>${candle.name}</h3>
           <p>Price: ${candle.price}</p>
-          <p>Length: ${candle.length || candle.lenght}</p>
+          <p>Length: ${candle.length || candle.lenght || '-'}</p>
         `;
+
         item.addEventListener('click', () => {
           slides = images;
+          currentFolder = folder;
           currentIndex = 0;
           updateModalImage();
           showModal();
         });
+
         gallery.appendChild(item);
       });
     })
     .catch((error) => {
-      console.error('Error loading candles:', error);
+      console.error('Error loading candles.json:', error);
     });
 });
