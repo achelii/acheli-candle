@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <img src="images/${folder}/${images[0]}" alt="${candle.name}">
           <h3>${candle.name}</h3>
           <p>Price: ${candle.price}</p>
-          <p>Length: ${candle.length || candle.lenght || '-'}</p>
+          ${candle.length || candle.lenght ? `<p>Length: ${candle.length || candle.lenght}</p>` : ''}
+          ${candle.scented ? `<p>Scented</p>` : ''}
         `;
 
         item.addEventListener('click', () => {
